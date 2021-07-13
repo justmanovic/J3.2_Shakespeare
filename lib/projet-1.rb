@@ -26,7 +26,19 @@ end
 # print word_counter("Howdy below go partner, Howdy sit down ! How's it going?",dictionnaire)
 
 
-fichier = 'o.txt'
-corpus = File.read(fichier)
+oeuvre = 'o.txt'
+corpus = File.read(oeuvre)
 dico = ["anonymous","the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
-print word_counter(corpus, dico)
+
+# print word_counter(corpus, dico)
+
+
+puts "------------------------------------------------------"
+grosmots = 'grosmots.txt'
+tab_grosmots =  File.read(grosmots).split("\n")
+
+
+
+print word_counter(corpus, tab_grosmots)
+puts
+puts
