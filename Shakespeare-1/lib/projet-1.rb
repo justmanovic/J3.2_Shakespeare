@@ -8,19 +8,25 @@ def word_counter(str_corpus, tab_dictionnary)
 
   tab_dictionnary.length.times do |i|
     str_corpus = (str_corpus.gsub(/[']/,' !').delete("?!,.")).downcase
-    puts str_corpus
-    puts
+    # puts str_corpus
+    # puts
 
 
     hash_dico[tab_dictionnary[i]] = str_corpus.split.count(tab_dictionnary[i])
-    print hash_dico
-    sleep(0.15)
+    # print hash_dico
+    # sleep(0.15)
   end
 
   return hash_dico.reject{|k,v| v==0}
 
 end
 
-dictionnaire = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
+# dictionnaire = ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
 
-print word_counter("Howdy below go partner, Howdy sit down ! How's it going?",dictionnaire)
+# print word_counter("Howdy below go partner, Howdy sit down ! How's it going?",dictionnaire)
+
+
+fichier = 'o.txt'
+corpus = File.read(fichier)
+dico = ["anonymous","the", "of", "and", "to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
+print word_counter(corpus, dico)
